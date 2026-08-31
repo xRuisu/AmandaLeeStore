@@ -1,3 +1,3 @@
 # E-Commerce-Project
-Amanda LeeSoaps &amp; Bubbles-
+Amanda Lee Soaps &amp; Bubbles-
 
