@@ -237,6 +237,7 @@
         }
 
         .product-image {
+            background-image: url(/images/cashmere_sweater_1.png);
             width: 130px;
             height: 110px;
 
@@ -249,14 +250,19 @@
                 inset 5px 7px 10px rgba(255, 255, 255, 0.35);
         }
 
+        .soap-image {
+            width: 130px;
+            height: 110px;
+        }
+
         .product-image.pink-soap {
-            background:
+            /* background:
                 linear-gradient(
                     145deg,
                     #ffd5dd,
                     #eca3b4,
                     #d77e96
-                );
+                ); */
         }
 
         .product-image.lavender-soap {
@@ -691,46 +697,25 @@
 
                         <div
                             class="cart-item"
-                            data-price="8.00"
+                            data-price="9.00"
                         >
 
-                            <!-- CASHMERE SWEATER PRODUCT CARD -->
+                            <div>
+                                <img class="soap-image" src="/images/cashmere_sweater_1.png" alt="Pink Soap">
+                                <!-- <span class="soap-word">
+                                    Cashmere Sweater
+                                </span> -->
+                            </div>
 
-<div class="product-card">
+                            <div class="item-info">
 
-    <div class="product-image">
-        <img 
-            src="images/cashmere-sweater.png" 
-            alt="Cashmere Sweater Handmade Soap"
-        >
-    </div>
+                                <h3>
+                                    Cashmere Sweater Soap
+                                </h3>
 
-    <div class="product-info">
-
-        <h2>Cashmere Sweater</h2>
-
-        <p class="product-type">
-            Handmade Soap
-        </p>
-
-        <p class="product-description">
-            A warm and cozy handmade soap inspired by the soft,
+                                <p>
+                                    A warm and cozy handmade soap inspired by the soft,
             comforting feeling of your favorite cashmere sweater.
-        </p>
-
-        <div class="product-bottom">
-
-            <span class="price">$9.00</span>
-
-            <button class="add-to-cart">
-                Add to Cart
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
                                 </p>
 
                                 <div class="quantity-row">
@@ -777,7 +762,7 @@
 
                         <div
                             class="cart-item"
-                            data-price="8.50"
+                            data-price="9.00"
                         >
 
                             <div class="product-image lavender-soap">
