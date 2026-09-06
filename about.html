@@ -1,1 +1,1619 @@
+<<<<<<< Updated upstream
 
+=======
+    <link href="css\about.css" rel="stylesheet" type="text/css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Amanda Lee Soaps & Bubbles</title>
+
+    <style>
+
+        /* =====================================
+           COLORS
+        ===================================== */
+
+        :root {
+            --pink: #f5cfd8;
+            --light-pink: #f9dfe3;
+            --blush: #efbccb;
+
+            --lavender: #d8c7e6;
+            --light-lavender: #eadff1;
+
+            --cream: #f8e5d1;
+            --peach: #f4d3c7;
+
+            --mauve: #a65475;
+            --deep-mauve: #754458;
+
+            --gold: #d4a74e;
+
+            --text: #654f59;
+        }
+
+
+        /* =====================================
+           RESET
+        ===================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(245, 188, 207, 0.65),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 85% 25%,
+                    rgba(211, 191, 231, 0.65),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #f7d6de,
+                    #f5e3df,
+                    #e7d9ef,
+                    #f5ddd1
+                );
+
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =====================================
+           TOP BAR
+        ===================================== */
+
+        .top-bar {
+            background:
+                linear-gradient(
+                    90deg,
+                    #efc5ce,
+                    #f4d5d5,
+                    #ead4e3
+                );
+
+            color: #815467;
+
+            padding: 10px 20px;
+
+            text-align: center;
+
+            font-size: 0.88rem;
+
+            letter-spacing: 0.3px;
+        }
+
+
+        /* =====================================
+           NAVIGATION
+        ===================================== */
+
+        header {
+            background: rgba(248, 224, 225, 0.95);
+
+            border-bottom:
+                1px solid rgba(157, 79, 112, 0.16);
+
+            box-shadow:
+                0 7px 25px rgba(110, 70, 90, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 20px 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .brand {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 1.45rem;
+
+            font-style: italic;
+
+            color: var(--mauve);
+
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+
+            align-items: center;
+
+            gap: 26px;
+
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #8b5067;
+
+            font-size: 0.9rem;
+
+            font-weight: bold;
+
+            padding-bottom: 6px;
+
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: 0;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--mauve);
+
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+
+        /* =====================================
+           HERO
+        ===================================== */
+
+        .about-hero {
+            position: relative;
+
+            overflow: hidden;
+
+            padding:
+                85px
+                20px
+                75px;
+
+            background:
+
+                radial-gradient(
+                    circle at 75% 40%,
+                    rgba(211, 190, 231, 0.75),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 20% 30%,
+                    rgba(244, 188, 203, 0.60),
+                    transparent 32%
+                ),
+
+                linear-gradient(
+                    120deg,
+                    #f5d2db,
+                    #f6dfda,
+                    #dfd1eb
+                );
+        }
+
+        .hero-container {
+            max-width: 1120px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+
+        /* =====================================
+           HERO TEXT
+        ===================================== */
+
+        .eyebrow {
+            color: var(--mauve);
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            font-size: 0.82rem;
+
+            margin-bottom: 15px;
+
+            font-weight: bold;
+        }
+
+        .hero-text h1 {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    3rem,
+                    6vw,
+                    5.2rem
+                );
+
+            line-height: 1;
+
+            color: var(--deep-mauve);
+
+            font-weight: normal;
+        }
+
+        .hero-text h1 em {
+            color: var(--mauve);
+
+            font-weight: normal;
+        }
+
+        .hero-text p {
+            margin-top: 25px;
+
+            max-width: 540px;
+
+            line-height: 1.8;
+
+            font-size: 1.05rem;
+        }
+
+        .shop-button {
+            display: inline-block;
+
+            margin-top: 28px;
+
+            padding:
+                14px
+                27px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b96685,
+                    #98506f
+                );
+
+            color: #fff3f6;
+
+            border-radius: 5px;
+
+            font-size: 0.88rem;
+
+            letter-spacing: 0.8px;
+
+            box-shadow:
+                0 9px 22px
+                rgba(117, 65, 89, 0.2);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .shop-button:hover {
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 14px 28px
+                rgba(117, 65, 89, 0.25);
+        }
+
+
+        /* =====================================
+           SOAP DISPLAY
+        ===================================== */
+
+        .soap-art {
+            min-height: 430px;
+
+            position: relative;
+
+            perspective: 1000px;
+        }
+
+
+        /* =====================================
+           REALISTIC SOAP
+        ===================================== */
+
+        .soap {
+            position: absolute;
+
+            width: 190px;
+
+            height: 125px;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.55);
+
+            box-shadow:
+
+                0 24px 35px
+                rgba(94,60,78,0.20),
+
+                0 8px 14px
+                rgba(94,60,78,0.12),
+
+                inset 6px 8px 13px
+                rgba(255,255,255,0.48),
+
+                inset -8px -10px 18px
+                rgba(92,55,77,0.10);
+
+            transition:
+                transform 0.35s ease;
+        }
+
+
+        /* Soap texture */
+
+        .soap::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(95,60,75,0.18)
+                    0 1px,
+                    transparent 1.5px
+                );
+
+            background-size:
+                16px 16px;
+
+            opacity: 0.6;
+        }
+
+
+        /* Soap highlight */
+
+        .soap-shine {
+            position: absolute;
+
+            width: 75%;
+
+            height: 55%;
+
+            left: 5%;
+
+            top: 5%;
+
+            border-radius: 22px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.65),
+                    rgba(255,255,255,0.06)
+                );
+
+            z-index: 2;
+        }
+
+
+        /* SOAP COLORS */
+
+        .cream-soap {
+            left: 15%;
+
+            top: 23%;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #fff0d7,
+                    #e8ceb0,
+                    #d9b88f
+                );
+
+            transform:
+                rotate(-4deg)
+                rotateY(7deg);
+
+            z-index: 2;
+        }
+
+        .lavender-soap {
+            left: 55%;
+
+            top: 17%;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #e4d6f2,
+                    #c4aadd,
+                    #a687c2
+                );
+
+            transform:
+                rotate(10deg)
+                rotateY(-8deg);
+
+            z-index: 1;
+        }
+
+        .pink-soap {
+            left: 35%;
+
+            top: 48%;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #ffd8df,
+                    #eca4b5,
+                    #da829b
+                );
+
+            transform:
+                rotate(-2deg)
+                rotateY(-4deg);
+
+            z-index: 4;
+        }
+
+
+        /* SOAP LABEL */
+
+        .soap-label {
+            position: absolute;
+
+            left: 50%;
+
+            top: 55%;
+
+            transform:
+                translate(-50%, -50%);
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-style: italic;
+
+            color:
+                rgba(100,65,82,0.48);
+
+            font-size: 0.85rem;
+
+            z-index: 5;
+        }
+
+
+        /* SOAP HOVER */
+
+        .pink-soap:hover {
+            transform:
+                translateY(-7px)
+                rotate(-2deg);
+        }
+
+        .cream-soap:hover {
+            transform:
+                translateY(-7px)
+                rotate(-4deg);
+        }
+
+        .lavender-soap:hover {
+            transform:
+                translateY(-7px)
+                rotate(10deg);
+        }
+
+
+        /* =====================================
+           REALISTIC BUBBLES
+        ===================================== */
+
+        .bubble {
+            position: absolute;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle at 28% 23%,
+
+                    rgba(255,255,255,0.95)
+                    0%,
+
+                    rgba(255,255,255,0.60)
+                    8%,
+
+                    rgba(255,255,255,0.10)
+                    25%,
+
+                    rgba(225,190,230,0.16)
+                    55%,
+
+                    rgba(184,155,211,0.15)
+                    75%,
+
+                    transparent
+                    100%
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.85);
+
+            box-shadow:
+
+                inset -5px -7px 12px
+                rgba(190,145,211,0.14),
+
+                inset 4px 4px 10px
+                rgba(255,255,255,0.7),
+
+                0 5px 14px
+                rgba(109,76,96,0.12);
+
+            animation:
+                bubbleFloat
+                6s
+                ease-in-out
+                infinite;
+        }
+
+
+        /* Iridescent edge */
+
+        .bubble::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 3px;
+
+            border-radius: 50%;
+
+            box-shadow:
+
+                inset 5px 0 8px
+                rgba(249,165,199,0.22),
+
+                inset -5px 0 8px
+                rgba(167,151,226,0.24),
+
+                inset 0 5px 8px
+                rgba(255,220,164,0.18);
+        }
+
+
+        /* Bubble reflection */
+
+        .bubble::after {
+            content: "";
+
+            position: absolute;
+
+            width: 25%;
+
+            height: 17%;
+
+            left: 20%;
+
+            top: 17%;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.85);
+
+            transform:
+                rotate(-30deg);
+
+            filter:
+                blur(1px);
+        }
+
+
+        .b1 {
+            width: 68px;
+            height: 68px;
+            right: 7%;
+            top: 14%;
+        }
+
+        .b2 {
+            width: 38px;
+            height: 38px;
+            right: 29%;
+            top: 5%;
+            animation-delay: 1s;
+        }
+
+        .b3 {
+            width: 52px;
+            height: 52px;
+            left: 7%;
+            bottom: 17%;
+            animation-delay: 2s;
+        }
+
+        .b4 {
+            width: 27px;
+            height: 27px;
+            left: 40%;
+            top: 10%;
+            animation-delay: 1.5s;
+        }
+
+        .b5 {
+            width: 78px;
+            height: 78px;
+            right: 0;
+            bottom: 8%;
+            animation-delay: 2.5s;
+        }
+
+        .b6 {
+            width: 34px;
+            height: 34px;
+            left: 25%;
+            bottom: 5%;
+            animation-delay: 3s;
+        }
+
+        .b7 {
+            width: 45px;
+            height: 45px;
+            right: 39%;
+            bottom: 8%;
+            animation-delay: 0.7s;
+        }
+
+
+        @keyframes bubbleFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    translateX(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-14px)
+                    translateX(4px);
+            }
+
+        }
+
+
+        /* =====================================
+           STORY
+        ===================================== */
+
+        .story {
+            padding:
+                90px
+                20px;
+
+            background:
+
+                radial-gradient(
+                    circle at 15% 40%,
+                    rgba(239,188,205,0.45),
+                    transparent 28%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #f6dcdf,
+                    #eadbed,
+                    #f5ddd2
+                );
+        }
+
+        .story-container {
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .story-title {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .story-title span {
+            color: var(--mauve);
+
+            font-size: 0.85rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+        .story-title h2 {
+            margin-top: 10px;
+
+            font-family:
+                Georgia,
+                serif;
+
+            color: var(--deep-mauve);
+
+            font-size:
+                clamp(
+                    2.5rem,
+                    5vw,
+                    4rem
+                );
+
+            font-weight: normal;
+        }
+
+        .story-title h2 em {
+            color: var(--mauve);
+        }
+
+        .story-card {
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #f2cfd8,
+                    #e5d5ec,
+                    #f2d8ce
+                );
+
+            border-radius: 30px;
+
+            padding:
+                55px
+                60px;
+
+            border:
+                1px solid
+                rgba(158,80,113,0.16);
+
+            box-shadow:
+                0 18px 40px
+                rgba(105,68,87,0.12);
+        }
+
+        .story-card p {
+            font-size: 1.05rem;
+
+            line-height: 1.85;
+
+            margin-bottom: 20px;
+        }
+
+        .story-card strong {
+            color: var(--mauve);
+        }
+
+
+        /* =====================================
+           WHY LOVE OUR SOAPS
+        ===================================== */
+
+        .features-section {
+            padding:
+                85px
+                20px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #f4d4dc,
+                    #eaddea,
+                    #dfd2eb,
+                    #f4d9ce
+                );
+        }
+
+        .features-heading {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .features-heading p {
+            color: var(--mauve);
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            font-size: 0.82rem;
+        }
+
+        .features-heading h2 {
+            margin-top: 10px;
+
+            color: var(--deep-mauve);
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(
+                    2.2rem,
+                    4vw,
+                    3.4rem
+                );
+
+            font-weight: normal;
+        }
+
+        .features {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 22px;
+        }
+
+        .feature {
+            padding:
+                35px
+                25px;
+
+            text-align: center;
+
+            border-radius: 22px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #f3cfd9,
+                    #e4d3ea
+                );
+
+            border:
+                1px solid
+                rgba(164,82,117,0.18);
+
+            box-shadow:
+                0 13px 30px
+                rgba(103,65,85,0.10);
+
+            transition:
+                transform 0.3s ease;
+        }
+
+        .feature:nth-child(2) {
+            background:
+                linear-gradient(
+                    145deg,
+                    #dfd0eb,
+                    #efd2df
+                );
+        }
+
+        .feature:nth-child(3) {
+            background:
+                linear-gradient(
+                    145deg,
+                    #f1ccd6,
+                    #e7d3e7
+                );
+        }
+
+        .feature:nth-child(4) {
+            background:
+                linear-gradient(
+                    145deg,
+                    #efd8c8,
+                    #efccd8
+                );
+        }
+
+        .feature:hover {
+            transform:
+                translateY(-8px);
+        }
+
+        .feature-icon {
+            width: 70px;
+
+            height: 70px;
+
+            margin:
+                0 auto
+                20px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 2rem;
+
+            background:
+                rgba(248,211,221,0.8);
+
+            border:
+                1px solid
+                rgba(165,83,117,0.22);
+        }
+
+        .feature h3 {
+            color: var(--mauve);
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-style: italic;
+
+            font-weight: normal;
+
+            font-size: 1.35rem;
+
+            margin-bottom: 12px;
+        }
+
+        .feature p {
+            line-height: 1.6;
+
+            font-size: 0.92rem;
+        }
+
+        .heart {
+            display: block;
+
+            margin-top: 16px;
+
+            color: var(--gold);
+
+            font-size: 1.3rem;
+        }
+
+
+        /* =====================================
+           FINAL BANNER
+        ===================================== */
+
+        .final-banner {
+            text-align: center;
+
+            padding:
+                60px
+                20px;
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 50%,
+                    rgba(248,190,208,0.75),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 80% 40%,
+                    rgba(205,185,227,0.75),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    100deg,
+                    #edc5d2,
+                    #ddcde8,
+                    #efd0c7
+                );
+        }
+
+        .final-banner h2 {
+            color: var(--deep-mauve);
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(
+                    2rem,
+                    4vw,
+                    3.3rem
+                );
+
+            font-weight: normal;
+        }
+
+        .final-banner em {
+            color: var(--mauve);
+        }
+
+        .final-banner p {
+            margin-top: 12px;
+
+            color: #765061;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-style: italic;
+
+            font-size: 1.2rem;
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        footer {
+            background: #dbc8d2;
+
+            color: #664d59;
+
+            text-align: center;
+
+            padding:
+                30px
+                20px;
+
+            font-size: 0.88rem;
+        }
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media (max-width: 900px) {
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .features {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .nav-container {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+
+                gap: 14px;
+            }
+
+            .soap-art {
+                min-height: 340px;
+            }
+
+            .soap {
+                width: 145px;
+
+                height: 98px;
+            }
+
+            .cream-soap {
+                left: 8%;
+            }
+
+            .lavender-soap {
+                left: 52%;
+            }
+
+            .pink-soap {
+                left: 31%;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .story-card {
+                padding:
+                    35px
+                    25px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+        ♡ Handmade with love in small batches
+        &nbsp;&nbsp; • &nbsp;&nbsp;
+        Made with care just for you 🫧
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <header>
+
+        <div class="nav-container">
+
+            <div class="brand">
+                Amanda Lee Soaps &amp; Bubbles
+            </div>
+
+            <nav>
+
+                <a href="index.html">
+                    HOME
+                </a>
+
+                <a href="products.html">
+                    SHOP SOAPS
+                </a>
+
+                <a
+                    href="about.html"
+                    class="active"
+                >
+                    ABOUT
+                </a>
+
+                <a href="cart.html">
+                    CART
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="about-hero">
+
+            <div class="hero-container">
+
+
+                <!-- HERO TEXT -->
+
+                <div class="hero-text">
+
+                    <div class="eyebrow">
+                        ─── ABOUT US ♡ ───
+                    </div>
+
+                    <h1>
+                        Made with Love.
+                        <br>
+
+                        Made
+                        <em>for You.</em>
+                    </h1>
+
+                    <p>
+                        At
+                        <strong>
+                            Amanda Lee Soaps &amp; Bubbles
+                        </strong>,
+                        we believe the little things in life—
+                        like the soap you use every day—
+                        should bring you joy, comfort,
+                        and a little something special.
+                    </p>
+
+                    <a
+                        href="products.html"
+                        class="shop-button"
+                    >
+                        SHOP OUR SOAPS ♡
+                    </a>
+
+                </div>
+
+
+                <!-- SOAP ART -->
+
+                <div class="soap-art">
+
+
+                    <!-- CREAM SOAP -->
+
+                    <div class="soap cream-soap">
+
+                        <span class="soap-shine"></span>
+
+                        <span class="soap-label">
+                            Oat &amp; Honey
+                        </span>
+
+                    </div>
+
+
+                    <!-- LAVENDER SOAP -->
+
+                    <div class="soap lavender-soap">
+
+                        <span class="soap-shine"></span>
+
+                        <span class="soap-label">
+                            Lavender
+                        </span>
+
+                    </div>
+
+
+                    <!-- PINK SOAP -->
+
+                    <div class="soap pink-soap">
+
+                        <span class="soap-shine"></span>
+
+                        <span class="soap-label">
+                            Rose Petal
+                        </span>
+
+                    </div>
+
+
+                    <!-- BUBBLES -->
+
+                    <div class="bubble b1"></div>
+
+                    <div class="bubble b2"></div>
+
+                    <div class="bubble b3"></div>
+
+                    <div class="bubble b4"></div>
+
+                    <div class="bubble b5"></div>
+
+                    <div class="bubble b6"></div>
+
+                    <div class="bubble b7"></div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OUR STORY -->
+
+        <section class="story">
+
+            <div class="story-container">
+
+                <div class="story-title">
+
+                    <span>
+                        ─── OUR STORY ───
+                    </span>
+
+                    <h2>
+                        A little hobby.
+                        <br>
+
+                        <em>
+                            A lot of heart.
+                        </em>
+                        ♡
+                    </h2>
+
+                </div>
+
+
+                <div class="story-card">
+
+                    <p>
+                        What started as a love for creating
+                        beautiful handmade soaps has grown
+                        into a small business focused on
+                        bringing a little extra happiness
+                        and care to your everyday routine.
+                    </p>
+
+                    <p>
+                        Each soap is thoughtfully
+                        handcrafted in small batches with
+                        attention to quality, creativity,
+                        and detail.
+                    </p>
+
+                    <p>
+                        From beautiful colors and inviting
+                        scents to unique designs, every bar
+                        is made to feel special—because
+                        something you use every day
+                        shouldn't have to be ordinary.
+                    </p>
+
+                    <p>
+                        We believe handmade products have
+                        something mass-produced products
+                        simply can't replicate:
+                        <strong>
+                            a personal touch.
+                        </strong>
+                    </p>
+
+                    <p>
+                        Every batch represents time,
+                        creativity, and genuine care for
+                        the people who will eventually
+                        enjoy it.
+                    </p>
+
+                    <p>
+                        Whether you're treating yourself,
+                        looking for a thoughtful handmade
+                        gift, or discovering your next
+                        favorite soap,
+                        <strong>
+                            we're so happy you're here.
+                        </strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHY YOU'LL LOVE OUR SOAPS -->
+
+        <section class="features-section">
+
+            <div class="features-heading">
+
+                <p>
+                    ─── WHY YOU'LL LOVE OUR SOAPS ───
+                </p>
+
+                <h2>
+                    Handmade with a Personal Touch
+                </h2>
+
+            </div>
+
+
+            <div class="features">
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🌿
+                    </div>
+
+                    <h3>
+                        Thoughtfully Made
+                    </h3>
+
+                    <p>
+                        Created with attention to
+                        quality, creativity,
+                        and every little detail.
+                    </p>
+
+                    <span class="heart">
+                        ♡
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        💗
+                    </div>
+
+                    <h3>
+                        Small Batches
+                    </h3>
+
+                    <p>
+                        Handmade in small batches
+                        so each creation receives
+                        individual care.
+                    </p>
+
+                    <span class="heart">
+                        ♥
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🫧
+                    </div>
+
+                    <h3>
+                        Beautiful &amp; Unique
+                    </h3>
+
+                    <p>
+                        Fun colors, inviting scents,
+                        and unique designs make
+                        each bar special.
+                    </p>
+
+                    <span class="heart">
+                        ♡
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🎁
+                    </div>
+
+                    <h3>
+                        Made for Every Occasion
+                    </h3>
+
+                    <p>
+                        Treat yourself or share
+                        something handmade with
+                        someone special.
+                    </p>
+
+                    <span class="heart">
+                        ♥
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL BANNER -->
+
+        <section class="final-banner">
+
+            <h2>
+                Handmade with love.
+                <br>
+
+                <em>
+                    Made to make your day
+                    a little more bubbly.
+                </em>
+                ♡
+            </h2>
+
+            <p>
+                Amanda Lee Soaps &amp; Bubbles 🫧
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Amanda Lee Soaps &amp; Bubbles
+        &nbsp; | &nbsp;
+        Handmade With Love ♡
+
+    </footer>
+
+
+</body>
+
+</html>
+>>>>>>> Stashed changes
