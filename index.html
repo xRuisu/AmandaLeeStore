@@ -1,42 +1,134 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amanda Lee S&B</title>
-    <link href="css\main-styles.css" type="text/css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Amanda Lee Soaps & Bubbles — handmade soaps crafted with love.">
+    <title>Home | Amanda Lee Soaps &amp; Bubbles</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <section>
-    <div class="top-banner">
-        <p>Handmade with love in small batches                      Gentle on skin. Made for you.                   Free shipping on orders $75+</p>
+    <div class="topbar">
+        ♡ Handmade with love in small batches
+        &nbsp; • &nbsp;
+        Thank you for supporting handmade 🫧
     </div>
-   </section>
-    <header class="header-menu">
-        <a href="/index.html">HOME</a>
-        <a href="/index.html">SHOP SOAPS</a>
-        <a href="/index.html">COLLECTIONS</a>
-        <a href="/index.html">ABOUT</a>
-        <a href="/index.html">FAQ</a>
-        <a href="/index.html">CONTACT</a>
+
+    <header class="header">
+        <div class="nav">
+            <a class="brand" href="index.html">
+                Amanda Lee Soaps &amp; Bubbles
+            </a>
+
+            <nav class="links" aria-label="Main navigation">
+                <a href="index.html" aria-current="page">HOME</a>
+                <a href="products.html">SHOP SOAPS</a>
+                <a href="about.html">ABOUT</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">CONTACT</a>
+                <a href="cart.html">
+                    CART <span class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
     </header>
-    <section>
-        <div class="middle-banner">
 
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <div>
+                    <div class="eyebrow">Handmade with love ♡</div>
+
+                    <h1>
+                        Handmade Soaps.<br>
+                        <em>Made with Love.</em>
+                    </h1>
+
+                    <p>
+                        Little moments of joy, one beautiful handmade
+                        bar at a time. Discover our growing collection
+                        of soaps, crafted in small batches with care.
+                    </p>
+
+                    <a class="btn" href="products.html">
+                        Shop Soaps ♡
+                    </a>
+                </div>
+
+                <img
+                    class="hero-photo"
+                    src="images/cashmere-sweater.png"
+                    alt="Cashmere Sweater handmade soap"
+                >
+            </div>
+        </section>
+
+        <section class="wrap center">
+            <div class="eyebrow">Featured soap</div>
+            <h2 class="section-title">A Cozy Favorite ♡</h2>
+
+            <div class="grid">
+                <article class="card">
+                    <img
+                        src="images/cashmere-sweater.png"
+                        alt="Cashmere Sweater handmade soap"
+                    >
+
+                    <div class="card-content">
+                        <h3>Cashmere Sweater</h3>
+
+                        <p class="muted">
+                            A warm, cozy handmade soap with a beautiful
+                            caramel-colored finish.
+                        </p>
+
+                        <div class="card-actions">
+                            <span class="price">$7.00</span>
+
+                            <button
+                                class="btn"
+                                data-add="cashmere-sweater"
+                            >
+                                Add to Cart ♡
+                            </button>
+                        </div>
+
+                        <p
+                            id="cart-feedback"
+                            class="notice hidden"
+                            role="status"
+                        ></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="banner">
+            <h2>Handmade with love, just for you ♡</h2>
+            <p>Thank you for supporting our small business.</p>
+
+            <a href="about.html" class="btn btn-outline">
+                Our Story
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="products.html">Shop</a>
+            <a href="about.html">Our Story</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart</a>
         </div>
-    </section>
-    <section>
-        <div class="hero">
 
+        <div>
+            © 2026 Amanda Lee Soaps &amp; Bubbles
+            · Handmade With Love ♡
         </div>
-    </section>
-    <section>
-        <div class="bottom-banner">
-
-        </div>
-    </section>
-    <footer>
-
     </footer>
+
+    <script src="js/store.js" defer></script>
 </body>
 </html>
