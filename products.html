@@ -1,835 +1,1347 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Shop Soaps | Amanda Lee Soaps & Bubbles</title>
-
-    <style>
-
-        :root {
-            --pink: #f5cfd8;
-            --light-pink: #f9dfe3;
-            --blush: #efbccb;
-
-            --lavender: #d8c7e6;
-            --light-lavender: #eadff1;
-
-            --cream: #f8e5d1;
-            --peach: #f4d3c7;
-
-            --mauve: #a65475;
-            --deep-mauve: #754458;
-
-            --gold: #d4a74e;
-            --text: #654f59;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: var(--text);
-
-            background:
-                radial-gradient(
-                    circle at 15% 15%,
-                    rgba(245, 188, 207, 0.55),
-                    transparent 28%
-                ),
-                radial-gradient(
-                    circle at 85% 25%,
-                    rgba(211, 191, 231, 0.55),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    135deg,
-                    #f7d6de,
-                    #f3dfdd,
-                    #e7d9ef,
-                    #f5ddd1
-                );
-
-            min-height: 100vh;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        /* =====================================
-           TOP BAR
-        ===================================== */
-
-        .top-bar {
-            background:
-                linear-gradient(
-                    90deg,
-                    #efc5ce,
-                    #f4d5d5,
-                    #ead4e3
-                );
-
-            color: #815467;
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 0.88rem;
-        }
-
-        /* =====================================
-           NAVIGATION
-        ===================================== */
-
-        header {
-            background: rgba(248, 224, 225, 0.95);
-
-            border-bottom:
-                1px solid rgba(157, 79, 112, 0.16);
-
-            box-shadow:
-                0 7px 25px rgba(110, 70, 90, 0.08);
-        }
-
-        .nav-container {
-            max-width: 1150px;
-            margin: auto;
-            padding: 20px 25px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
-        }
-
-        .brand {
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size: 1.45rem;
-            font-style: italic;
-            color: var(--mauve);
-            font-weight: bold;
-        }
-
-        nav {
-            display: flex;
-            gap: 26px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #8b5067;
-            font-size: 0.9rem;
-            font-weight: bold;
-            padding-bottom: 6px;
-            position: relative;
-        }
-
-        nav a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            background: var(--mauve);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
-        }
-
-        /* =====================================
-           CATALOG HERO
-        ===================================== */
-
-        .catalog-hero {
-            padding: 70px 20px 55px;
-            text-align: center;
-
-            background:
-                radial-gradient(
-                    circle at 80% 35%,
-                    rgba(214, 194, 231, 0.70),
-                    transparent 28%
-                ),
-                radial-gradient(
-                    circle at 20% 25%,
-                    rgba(245, 190, 205, 0.58),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    120deg,
-                    #f5d2db,
-                    #f6dfda,
-                    #dfd1eb
-                );
-        }
-
-        .catalog-hero .eyebrow {
-            color: var(--mauve);
-            font-size: 0.82rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-
-        .catalog-hero h1 {
-            font-family: Georgia, serif;
-            font-weight: normal;
-            color: var(--deep-mauve);
-
-            font-size:
-                clamp(
-                    2.8rem,
-                    6vw,
-                    5rem
-                );
-        }
-
-        .catalog-hero h1 em {
-            color: var(--mauve);
-        }
-
-        .catalog-hero p {
-            max-width: 650px;
-            margin: 16px auto 0;
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #735969;
-        }
-
-        /* =====================================
-           CATALOG SECTION
-        ===================================== */
-
-        .catalog-section {
-            padding: 75px 20px 100px;
-        }
-
-        .catalog-container {
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        .catalog-heading {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .catalog-heading span {
-            color: var(--mauve);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.82rem;
-            font-weight: bold;
-        }
-
-        .catalog-heading h2 {
-            margin-top: 10px;
-
-            font-family: Georgia, serif;
-            color: var(--deep-mauve);
-            font-size: clamp(2rem, 4vw, 3.3rem);
-            font-weight: normal;
-        }
-
-        /* =====================================
-           PRODUCT GRID
-        ===================================== */
-
-        .product-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(290px, 380px));
-
-            justify-content: center;
-            gap: 30px;
-        }
-
-        /* =====================================
-           PRODUCT CARD
-        ===================================== */
-
-        .product-card {
-            background:
-                linear-gradient(
-                    145deg,
-                    #f2cfd8,
-                    #e4d5ec,
-                    #f1d8ce
-                );
-
-            border-radius: 28px;
-            overflow: hidden;
-
-            border:
-                1px solid rgba(158, 80, 113, 0.16);
-
-            box-shadow:
-                0 18px 40px rgba(105, 68, 87, 0.12);
-
-            transition:
-                transform 0.35s ease,
-                box-shadow 0.35s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-
-            box-shadow:
-                0 25px 50px rgba(105, 68, 87, 0.17);
-        }
-
-        /* =====================================
-           PRODUCT IMAGE
-        ===================================== */
-
-        .product-image-wrap {
-            width: 100%;
-            height: 340px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #e8d8df,
-                    #f3ddd5
-                );
-
-            overflow: hidden;
-            position: relative;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-
-            transition:
-                transform 0.4s ease,
-                filter 0.4s ease;
-        }
-
-        .product-card:hover .product-image {
-            transform: scale(1.035);
-            filter: brightness(1.03);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 18px;
-            left: 18px;
-
-            background:
-                rgba(248, 221, 226, 0.94);
-
-            color: var(--deep-mauve);
-
-            border:
-                1px solid rgba(166, 84, 117, 0.18);
-
-            padding: 8px 13px;
-            border-radius: 20px;
-
-            font-size: 0.75rem;
-            font-weight: bold;
-            letter-spacing: 0.8px;
-        }
-
-        /* =====================================
-           PRODUCT CONTENT
-        ===================================== */
-
-        .product-content {
-            padding: 28px;
-        }
-
-        .product-name {
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            color: var(--deep-mauve);
-
-            font-size: 1.8rem;
-            font-weight: normal;
-            margin-bottom: 8px;
-        }
-
-        .product-description {
-            color: #725966;
-            line-height: 1.65;
-            font-size: 0.95rem;
-            margin-bottom: 22px;
-        }
-
-        .product-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .product-price {
-            color: var(--mauve);
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-
-        .add-cart-btn {
-            border: none;
-
-            padding:
-                13px
-                20px;
-
-            border-radius: 8px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #b96685,
-                    #98506f
-                );
-
-            color: #fff5f7;
-
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 9px 20px rgba(117, 65, 89, 0.18);
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
-        }
-
-        .add-cart-btn:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 13px 25px rgba(117, 65, 89, 0.25);
-        }
-
-        /* =====================================
-           PRODUCT MESSAGE
-        ===================================== */
-
-        .cart-message {
-            display: none;
-
-            margin-top: 18px;
-            padding: 12px 14px;
-
-            border-radius: 12px;
-
-            background:
-                rgba(248, 226, 218, 0.75);
-
-            color: var(--deep-mauve);
-
-            text-align: center;
-            font-size: 0.87rem;
-        }
-
-        /* =====================================
-           BOTTOM BANNER
-        ===================================== */
-
-        .catalog-banner {
-            margin-top: 70px;
-
-            padding:
-                45px
-                25px;
-
-            text-align: center;
-
-            border-radius: 28px;
-
-            background:
-                radial-gradient(
-                    circle at 20% 50%,
-                    rgba(247, 190, 207, 0.75),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 40%,
-                    rgba(207, 187, 229, 0.75),
-                    transparent 32%
-                ),
-                linear-gradient(
-                    100deg,
-                    #efcad5,
-                    #ded0e9,
-                    #efd3ca
-                );
-
-            box-shadow:
-                0 15px 35px rgba(103, 65, 85, 0.10);
-        }
-
-        .catalog-banner h2 {
-            font-family: Georgia, serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: normal;
-            color: var(--deep-mauve);
-        }
-
-        .catalog-banner h2 em {
-            color: var(--mauve);
-        }
-
-        .catalog-banner p {
-            margin-top: 10px;
-            color: #725463;
-        }
-
-        /* =====================================
-           FOOTER
-        ===================================== */
-
-        footer {
-            background: #dbc8d2;
-            color: #664d59;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.88rem;
-        }
-
-        /* =====================================
-           MOBILE
-        ===================================== */
-
-        @media (max-width: 650px) {
-
-            .nav-container {
-                flex-direction: column;
-            }
-
-            nav {
-                justify-content: center;
-                gap: 14px;
-            }
-
-            .catalog-section {
-                padding-top: 55px;
-            }
-
-            .product-image-wrap {
-                height: 290px;
-            }
-
-            .product-bottom {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .add-cart-btn {
-                width: 100%;
-            }
-
-            .product-price {
-                text-align: center;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Shop handmade soaps and request sample packs from Amanda Lee Soaps & Bubbles.">
+<title>Shop Soaps | Amanda Lee Soaps &amp; Bubbles</title>
+
+<style>
+:root {
+    --pink: #f5cfd8;
+    --light-pink: #f9dfe3;
+    --blush: #efbccb;
+    --lavender: #d8c7e6;
+    --light-lavender: #eadff1;
+    --cream: #f8e5d1;
+    --mauve: #a65475;
+    --deep-mauve: #754458;
+    --text: #654f59;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: linear-gradient(
+        135deg,
+        #f7d6de,
+        #f5e3df,
+        #e7d9ef,
+        #f5ddd1
+    );
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.top-bar {
+    text-align: center;
+    padding: 11px 15px;
+    background: linear-gradient(
+        90deg,
+        #efc5ce,
+        #f4d5d5,
+        #ead4e3
+    );
+    font-size: .88rem;
+    color: #815467;
+}
+
+header {
+    background: #f8e0e1;
+    box-shadow: 0 7px 25px #6e465a14;
+}
+
+.nav-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    font: italic bold 1.45rem Georgia, serif;
+    color: var(--mauve);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    align-items: center;
+}
+
+nav a {
+    font-size: .86rem;
+    font-weight: bold;
+    color: #8b5067;
+}
+
+nav a:hover,
+nav a.active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/* FLOATING CART */
+.floating-cart {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border-radius: 999px;
+    background: linear-gradient(
+        135deg,
+        #b96685,
+        #754458
+    );
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 10px 30px #75445866;
+    text-decoration: none;
+}
+
+.floating-cart:hover {
+    filter: brightness(1.08);
+}
+
+.floating-count {
+    background: white;
+    color: #754458;
+    border-radius: 999px;
+    min-width: 27px;
+    height: 27px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+}
+
+/* PAGE HERO */
+.hero {
+    text-align: center;
+    padding: 75px 20px;
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            #f4bccba6,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 40%,
+            #d3bee7bf,
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #f5d2db,
+            #f6dfda,
+            #dfd1eb
+        );
+}
+
+.eyebrow {
+    font-size: .8rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: var(--mauve);
+    text-transform: uppercase;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    color: var(--deep-mauve);
+}
+
+h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    margin: 14px 0;
+}
+
+h1 em, h2 em {
+    color: var(--mauve);
+}
+
+.hero p {
+    max-width: 650px;
+    line-height: 1.8;
+    margin: auto;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 65px 24px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.heading h2 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    margin: 10px 0;
+}
+
+/* PROMOTIONAL OFFER */
+.offer {
+    max-width: 760px;
+    margin: 0 auto 45px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        #f3cbd7,
+        #e7d5ed,
+        #f6dfce
+    );
+    box-shadow: 0 12px 28px #6944571a;
+}
+
+.offer strong {
+    display: block;
+    font: 1.6rem Georgia, serif;
+    color: var(--deep-mauve);
+    margin-bottom: 10px;
+}
+
+.offer p {
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* PRODUCT CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 27px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 24px;
+    background: linear-gradient(
+        145deg,
+        #f7e2e5,
+        #e9ddef,
+        #f7e4d6
+    );
+    box-shadow: 0 15px 32px #6944571f;
+    border: 1px solid #9e507129;
+}
+
+.art {
+    min-height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+        circle,
+        #ffffff8c,
+        transparent 65%
+    );
+}
+
+.soap {
+    width: 170px;
+    height: 115px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font: italic 1.15rem Georgia, serif;
+    transform: rotate(-8deg);
+    box-shadow:
+        inset 5px 5px 14px #ffffff80,
+        inset -8px -8px 15px #6e415526,
+        0 18px 30px #63415433;
+    border: 2px solid #ffffff73;
+}
+
+.cashmere {
+    background: linear-gradient(
+        145deg,
+        #f1d1a8,
+        #bf8c66
+    );
+    color: #744a3a;
+}
+
+.baby {
+    background: linear-gradient(
+        145deg,
+        #fff0f4,
+        #e8bfd3
+    );
+    color: #955c77;
+}
+
+.bubblegum {
+    background: linear-gradient(
+        145deg,
+        #f8c7df,
+        #d995d0
+    );
+    color: #8d4a78;
+}
+
+.card-body {
+    padding: 27px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.category {
+    font-size: .76rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    color: var(--mauve);
+}
+
+.card h3 {
+    font-size: 1.65rem;
+    margin: 12px 0;
+}
+
+.card p {
+    line-height: 1.7;
+    font-size: .94rem;
+}
+
+.price {
+    font: 1.65rem Georgia, serif;
+    color: var(--deep-mauve);
+    margin: 12px 0 20px;
+}
+
+/* INGREDIENT SUBSTITUTION */
+.check-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #d9b4c6;
+    border-radius: 12px;
+    background: #ffffffa6;
+    cursor: pointer;
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.check-option input {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    flex: none;
+    accent-color: var(--mauve);
+}
+
+.check-option:has(input:checked) {
+    background: var(--pink);
+    border-color: var(--mauve);
+}
+
+.note {
+    font-size: .8rem !important;
+    margin: 12px 0 20px;
+}
+
+/* QUANTITY SELECTOR */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 17px;
+    flex-wrap: wrap;
+}
+
+.quantity-control label {
+    font-weight: bold;
+    color: var(--deep-mauve);
+}
+
+.quantity-input {
+    width: 85px;
+    padding: 10px;
+    border: 1px solid #d9b4c6;
+    border-radius: 9px;
+    background: #fff9fb;
+    color: var(--deep-mauve);
+    text-align: center;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    border: 0;
+    border-radius: 7px;
+    padding: 15px 23px;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #b96685,
+        #98506f
+    );
+    font-weight: bold;
+    font-size: .88rem;
+    text-align: center;
+}
+
+.btn:hover {
+    filter: brightness(.95);
+}
+
+.btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.card .btn {
+    margin-top: auto;
+}
+
+.status {
+    font-size: .85rem;
+    color: var(--deep-mauve);
+    min-height: 20px;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+/* INFORMATION PANELS */
+.panel {
+    max-width: 880px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 25px;
+    background: linear-gradient(
+        145deg,
+        #f2cfd8,
+        #e5d5ec,
+        #f2d8ce
+    );
+    box-shadow: 0 15px 32px #6944571a;
+}
+
+.panel h3 {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.panel p {
+    line-height: 1.8;
+}
+
+/* SAMPLE PACKS */
+.sample-options {
+    display: grid;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.sample-count {
+    font-weight: bold;
+    color: var(--mauve);
+}
+
+.sample-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 1px solid #d9b4c6;
+    border-radius: 14px;
+    background: #ffffffa6;
+    cursor: pointer;
+}
+
+.sample-option:has(input:checked) {
+    background: var(--pink);
+    border-color: var(--mauve);
+}
+
+.sample-option input {
+    width: 21px;
+    height: 21px;
+    margin: 0;
+    accent-color: var(--mauve);
+}
+
+.sample-option:has(input:disabled) {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 999px;
+    background: #ffffffa6;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    background: var(--mauve);
+    transition: width .2s;
+}
+
+/* BOTTOM BANNER AND FOOTER */
+.bottom {
+    padding: 65px 20px;
+    text-align: center;
+    background: linear-gradient(
+        100deg,
+        #edc5d2,
+        #ddcde8,
+        #efd0c7
+    );
+}
+
+.bottom h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+footer {
+    text-align: center;
+    background: #dbc8d2;
+    padding: 30px 20px;
+    font-size: .88rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+:focus-visible {
+    outline: 3px solid var(--deep-mauve);
+    outline-offset: 3px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 950px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .nav-container {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 50px 18px;
+    }
+
+    .panel {
+        padding: 28px 22px;
+    }
+
+    .floating-cart {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
+<div class="top-bar">
+    ♡ Handmade with love in small batches
+    &nbsp; • &nbsp;
+    Made with care just for you 🫧
+</div>
 
-    <!-- =====================================
-         TOP BAR
-    ====================================== -->
+<!-- NAVIGATION -->
+<header>
+    <div class="nav-container">
+        <a class="brand" href="index.html">
+            Amanda Lee Soaps &amp; Bubbles
+        </a>
 
-    <div class="top-bar">
-        ♡ Handmade with love in small batches
-        &nbsp;&nbsp; • &nbsp;&nbsp;
-        Thank you for supporting handmade 🫧
+        <nav aria-label="Main navigation">
+            <a href="index.html">HOME</a>
+
+            <a href="products.html"
+               class="active"
+               aria-current="page">
+                SHOP SOAPS
+            </a>
+
+            <a href="about.html">ABOUT</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">CONTACT</a>
+
+            <a href="cart.html">
+                CART <span id="cart-count">(0)</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- FLOATING CART BUTTON -->
+<a href="cart.html"
+   class="floating-cart"
+   aria-label="View shopping cart">
+    <span aria-hidden="true">🛒</span>
+    View Cart
+    <span id="floating-cart-count" class="floating-count">
+        0
+    </span>
+</a>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="eyebrow">
+        ─── HANDMADE WITH LOVE ♡ ───
     </div>
 
+    <h1>Shop Our <em>Soaps</em></h1>
 
-    <!-- =====================================
-         NAVIGATION
-    ====================================== -->
+    <p>
+        Beautiful handmade soaps, thoughtfully crafted
+        in small batches. Find a little everyday luxury
+        for yourself or someone special.
+    </p>
+</section>
 
-    <header>
+<!-- SHOP SOAPS -->
+<section class="container">
 
-        <div class="nav-container">
+    <div class="heading">
+        <div class="eyebrow">OUR COLLECTION</div>
+        <h2>Something <em>Special</em> ♡</h2>
+        <p>Explore our currently listed handmade soaps.</p>
+    </div>
 
-            <div class="brand">
-                Amanda Lee Soaps &amp; Bubbles
+    <div class="offer">
+        <strong>♡ 4 Regular Soap Bars for $25 ♡</strong>
+
+        <p>
+            Regular soaps are $7 each.
+            Choose any four regular bars for $25.
+            Mix and match your favorites!
+            Kids' soaps are excluded.
+            Savings are calculated in your cart.
+        </p>
+    </div>
+
+    <div class="grid">
+
+        <!-- CASHMERE SWEATER -->
+        <article class="card" data-product="cashmere-sweater">
+
+            <div class="art">
+                <div class="soap cashmere">
+                    Cashmere<br>Sweater
+                </div>
             </div>
 
-            <nav>
+            <div class="card-body">
+                <span class="category">Regular Soap</span>
 
-                <a href="index.html">
-                    HOME
-                </a>
+                <h3>Cashmere Sweater</h3>
 
-                <a
-                    href="products.html"
-                    class="active"
+                <p>
+                    A cozy handmade soap with a warm,
+                    inviting character.
+                </p>
+
+                <div class="price">$7.00</div>
+
+                <label class="check-option">
+                    <input
+                        type="checkbox"
+                        class="substitution-checkbox"
+                    >
+                    <span>
+                        I would like to be contacted
+                        about an ingredient substitution.
+                    </span>
+                </label>
+
+                <p class="note">
+                    Substitutions are subject to
+                    review and approval.
+                </p>
+
+                <div class="quantity-control">
+                    <label for="qty-cashmere-sweater">
+                        Quantity
+                    </label>
+
+                    <input
+                        class="quantity-input"
+                        id="qty-cashmere-sweater"
+                        type="number"
+                        min="1"
+                        max="99"
+                        step="1"
+                        value="1"
+                        inputmode="numeric"
+                    >
+                </div>
+
+                <button
+                    type="button"
+                    class="btn"
+                    data-add="cashmere-sweater">
+                    Add to Cart ♡
+                </button>
+
+                <div
+                    class="status"
+                    role="status"
+                    aria-live="polite">
+                </div>
+            </div>
+        </article>
+
+        <!-- BABY POWDER -->
+        <article class="card" data-product="baby-powder">
+
+            <div class="art">
+                <div class="soap baby">
+                    Baby<br>Powder
+                </div>
+            </div>
+
+            <div class="card-body">
+                <span class="category">Kids' Soap</span>
+
+                <h3>Baby Powder</h3>
+
+                <p>
+                    A handmade kids' soap in the
+                    Baby Powder scent.
+                </p>
+
+                <div class="price">$10.00</div>
+
+                <label class="check-option">
+                    <input
+                        type="checkbox"
+                        class="substitution-checkbox"
+                    >
+                    <span>
+                        I would like to be contacted
+                        about an ingredient substitution.
+                    </span>
+                </label>
+
+                <p class="note">
+                    Requests require review and approval.
+                    Always review ingredients before use.
+                </p>
+
+                <div class="quantity-control">
+                    <label for="qty-baby-powder">
+                        Quantity
+                    </label>
+
+                    <input
+                        class="quantity-input"
+                        id="qty-baby-powder"
+                        type="number"
+                        min="1"
+                        max="99"
+                        step="1"
+                        value="1"
+                        inputmode="numeric"
+                    >
+                </div>
+
+                <button
+                    type="button"
+                    class="btn"
+                    data-add="baby-powder">
+                    Add to Cart ♡
+                </button>
+
+                <div
+                    class="status"
+                    role="status"
+                    aria-live="polite">
+                </div>
+            </div>
+        </article>
+
+        <!-- BUBBLEGUM -->
+        <article class="card" data-product="bubblegum">
+
+            <div class="art">
+                <div class="soap bubblegum">
+                    Bubblegum
+                </div>
+            </div>
+
+            <div class="card-body">
+                <span class="category">Kids' Soap</span>
+
+                <h3>Bubblegum</h3>
+
+                <p>
+                    A playful handmade kids' soap
+                    in the Bubblegum scent.
+                </p>
+
+                <div class="price">$10.00</div>
+
+                <label class="check-option">
+                    <input
+                        type="checkbox"
+                        class="substitution-checkbox"
+                    >
+                    <span>
+                        I would like to be contacted
+                        about an ingredient substitution.
+                    </span>
+                </label>
+
+                <p class="note">
+                    Requests require review and approval.
+                    Always review ingredients before use.
+                </p>
+
+                <div class="quantity-control">
+                    <label for="qty-bubblegum">
+                        Quantity
+                    </label>
+
+                    <input
+                        class="quantity-input"
+                        id="qty-bubblegum"
+                        type="number"
+                        min="1"
+                        max="99"
+                        step="1"
+                        value="1"
+                        inputmode="numeric"
+                    >
+                </div>
+
+                <button
+                    type="button"
+                    class="btn"
+                    data-add="bubblegum">
+                    Add to Cart ♡
+                </button>
+
+                <div
+                    class="status"
+                    role="status"
+                    aria-live="polite">
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- SAMPLE PACKS -->
+<section class="container" style="padding-top:10px">
+
+    <div class="panel">
+
+        <div class="eyebrow">
+            TRY SOMETHING NEW
+        </div>
+
+        <h3>Build Your Sample Pack 🫧</h3>
+
+        <p>
+            Choose up to four different soap scents
+            for your sample pack. Three scents are
+            available to select right now.
+        </p>
+
+        <h4>Choose 4 Samples</h4>
+
+        <p
+            class="sample-count"
+            id="sample-count"
+            aria-live="polite">
+            0 of 4 samples selected
+        </p>
+
+        <div class="progress" aria-hidden="true">
+            <div
+                class="progress-fill"
+                id="sample-progress">
+            </div>
+        </div>
+
+        <div class="sample-options">
+
+            <label class="sample-option">
+                <input
+                    class="sample-checkbox"
+                    type="checkbox"
+                    value="Cashmere Sweater"
                 >
-                    SHOP SOAPS
-                </a>
+                <span>Cashmere Sweater</span>
+            </label>
 
-                <a href="about.html">
-                    ABOUT
-                </a>
+            <label class="sample-option">
+                <input
+                    class="sample-checkbox"
+                    type="checkbox"
+                    value="Baby Powder"
+                >
+                <span>Baby Powder</span>
+            </label>
 
-                <a href="cart.html">
-                    CART
-                </a>
-
-            </nav>
+            <label class="sample-option">
+                <input
+                    class="sample-checkbox"
+                    type="checkbox"
+                    value="Bubblegum"
+                >
+                <span>Bubblegum</span>
+            </label>
 
         </div>
 
-    </header>
-
-
-    <main>
-
-
-        <!-- =====================================
-             CATALOG HERO
-        ====================================== -->
-
-        <section class="catalog-hero">
-
-            <div class="eyebrow">
-                ─── HANDMADE SOAP COLLECTION ♡ ───
-            </div>
-
-            <h1>
-                Shop Our
-                <em>Soaps</em>
-            </h1>
-
-            <p>
-                Browse our handmade soap collection.
-                New soaps will be added as they become available.
-            </p>
-
-        </section>
-
-
-        <!-- =====================================
-             CATALOG
-        ====================================== -->
-
-        <section class="catalog-section">
-
-            <div class="catalog-container">
-
-
-                <div class="catalog-heading">
-
-                    <span>
-                        ─── CURRENTLY AVAILABLE ───
-                    </span>
-
-                    <h2>
-                        Handmade With Love ♡
-                    </h2>
-
-                </div>
-
-
-                <div class="product-grid">
-
-
-                    <!-- =================================
-                         CASHMERE SWEATER
-                    ================================== -->
-
-                    <article
-                        class="product-card"
-                        data-name="Cashmere Sweater"
-                        data-price="8.00"
-                    >
-
-                        <div class="product-image-wrap">
-
-                            <img
-                                src="images/cashmere-sweater.png"
-                                alt="Cashmere Sweater handmade soap"
-                                class="product-image"
-                            >
-
-                            <div class="product-badge">
-                                HANDMADE ♡
-                            </div>
-
-                        </div>
-
-
-                        <div class="product-content">
-
-                            <h3 class="product-name">
-                                Cashmere Sweater
-                            </h3>
-
-                            <p class="product-description">
-                                A warm and cozy handmade soap
-                                with a rich caramel-colored appearance.
-                            </p>
-
-
-                            <div class="product-bottom">
-
-                                <span class="product-price">
-                                    $8.00
-                                </span>
-
-                                <button
-                                    type="button"
-                                    class="add-cart-btn"
-                                >
-                                    ADD TO CART ♡
-                                </button>
-
-                            </div>
-
-
-                            <div class="cart-message">
-                                Cashmere Sweater added to your cart ♡
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-
-                <!-- =====================================
-                     BOTTOM MESSAGE
-                ====================================== -->
-
-                <div class="catalog-banner">
-
-                    <h2>
-                        More handmade soaps
-                        <em>coming soon.</em>
-                    </h2>
-
-                    <p>
-                        New products will be added to the catalog
-                        as they are completed. 🫧
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
-
-    <footer>
-
-        © 2026 Amanda Lee Soaps &amp; Bubbles
-        &nbsp; | &nbsp;
-        Handmade With Love ♡
-
-    </footer>
-
-
-    <script>
-
-        /*
-        =========================================
-        ADD TO CART BUTTON
-
-        This currently confirms the click only.
-        It can be connected to the full cart
-        system later.
-        =========================================
-        */
-
-        document.querySelectorAll(
-            ".add-cart-btn"
-        ).forEach((button) => {
-
-            button.addEventListener(
-                "click",
-                function() {
-
-                    const card =
-                        this.closest(
-                            ".product-card"
-                        );
-
-                    const message =
-                        card.querySelector(
-                            ".cart-message"
-                        );
-
-
-                    message.style.display =
-                        "block";
-
-
-                    this.textContent =
-                        "ADDED ✓";
-
-
-                    setTimeout(
-                        function() {
-
-                            message.style.display =
-                                "none";
-
-                            button.textContent =
-                                "ADD TO CART ♡";
-
-                        },
-                        2500
-                    );
-
-                }
-            );
-
+        <p class="note">
+            Sample pack pricing and availability
+            are confirmed by inquiry.
+            The fourth scent option will become
+            available when another scent is added
+            to our collection.
+        </p>
+
+        <button
+            class="btn"
+            type="button"
+            id="sample-inquiry"
+            disabled>
+            Inquire About Selected Samples ♡
+        </button>
+
+        <p
+            class="status"
+            id="sample-message"
+            role="status"
+            aria-live="polite">
+        </p>
+
+    </div>
+</section>
+
+<!-- PACKAGING AND SHIPPING -->
+<section class="container" style="padding-top:10px">
+
+    <div class="panel">
+        <div class="eyebrow">
+            MADE WITH CARE
+        </div>
+
+        <h3>Packaging &amp; Shipping ♡</h3>
+
+        <p>
+            Each soap bar is individually packaged
+            in a sealed clear plastic bag.
+        </p>
+
+        <p>
+            Shipping charges depend on the final
+            packed weight, dimensions, destination,
+            and selected carrier service.
+            Shipping rates are not calculated
+            automatically on this website yet.
+        </p>
+
+        <p>
+            Online checkout is still being developed.
+            Please contact us for current ordering
+            arrangements and shipping questions.
+        </p>
+    </div>
+
+</section>
+
+<!-- CONTACT BANNER -->
+<section class="bottom">
+
+    <h2>Handmade with <em>Love</em> ♡</h2>
+
+    <p>
+        Questions about a soap or ingredient substitution?
+        We'd love to hear from you.
+    </p>
+
+    <a
+        class="btn"
+        href="mailto:amandaleesoaps@gmail.com?subject=Soap%20Inquiry">
+        Contact Us ♡
+    </a>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">Our Story</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
+    </div>
+
+    © 2026 Amanda Lee Soaps &amp; Bubbles
+    &nbsp; | &nbsp; Handmade With Love ♡
+
+</footer>
+
+<script>
+"use strict";
+
+// CART STORAGE
+const CART_KEY = "amanda-lee-cart-v1";
+
+// AVAILABLE PRODUCTS
+const PRODUCTS = {
+    "cashmere-sweater": {
+        name: "Cashmere Sweater",
+        price: 7,
+        category: "regular"
+    },
+
+    "baby-powder": {
+        name: "Baby Powder",
+        price: 10,
+        category: "kids"
+    },
+
+    "bubblegum": {
+        name: "Bubblegum",
+        price: 10,
+        category: "kids"
+    }
+};
+
+// READ CART
+function readCart() {
+    try {
+        const result = JSON.parse(
+            localStorage.getItem(CART_KEY) || "[]"
+        );
+
+        return Array.isArray(result) ? result : [];
+    } catch {
+        return [];
+    }
+}
+
+// SAVE CART
+function saveCart(cart) {
+    try {
+        localStorage.setItem(
+            CART_KEY,
+            JSON.stringify(cart)
+        );
+
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+// UPDATE BOTH CART COUNTERS
+function updateCartCount() {
+    const count = readCart().reduce((total, item) => {
+        const quantity = Number(item.quantity);
+
+        return total + (
+            Number.isInteger(quantity) && quantity > 0
+                ? quantity
+                : 0
+        );
+    }, 0);
+
+    document.getElementById("cart-count").textContent =
+        "(" + count + ")";
+
+    document.getElementById(
+        "floating-cart-count"
+    ).textContent = String(count);
+}
+
+// ADD SELECTED QUANTITY TO CART
+function addToCart(id, customization, quantity) {
+    if (
+        !PRODUCTS[id] ||
+        !Number.isInteger(quantity) ||
+        quantity < 1 ||
+        quantity > 99
+    ) {
+        return false;
+    }
+
+    const cart = readCart();
+
+    const existing = cart.find(item =>
+        item.id === id &&
+        (item.customization || "") === customization
+    );
+
+    if (existing) {
+        const oldQuantity = Number(existing.quantity);
+
+        existing.quantity = (
+            Number.isInteger(oldQuantity) &&
+            oldQuantity > 0
+                ? oldQuantity
+                : 0
+        ) + quantity;
+    } else {
+        cart.push({
+            id: id,
+            quantity: quantity,
+            customization: customization
         });
+    }
 
-    </script>
+    if (!saveCart(cart)) {
+        return false;
+    }
 
+    updateCartCount();
+
+    return true;
+}
+
+// SOAP ADD TO CART BUTTONS
+document.querySelectorAll("[data-add]").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const card = button.closest(".card");
+
+        const checkbox = card.querySelector(
+            ".substitution-checkbox"
+        );
+
+        const quantityInput = card.querySelector(
+            ".quantity-input"
+        );
+
+        const quantity = Number(quantityInput.value);
+
+        const status = card.querySelector(".status");
+
+        // CHECK QUANTITY
+        if (
+            !Number.isInteger(quantity) ||
+            quantity < 1 ||
+            quantity > 99
+        ) {
+            status.textContent =
+                "Please enter a whole-number quantity from 1 to 99.";
+
+            quantityInput.focus();
+
+            return;
+        }
+
+        // INGREDIENT SUBSTITUTION REQUEST
+        const customization = checkbox.checked
+            ? "Customer requests contact about ingredient substitution"
+            : "";
+
+        // SAVE TO CART
+        const success = addToCart(
+            button.dataset.add,
+            customization,
+            quantity
+        );
+
+        if (success) {
+            status.textContent =
+                "♡ Added " +
+                quantity +
+                (quantity === 1 ? " bar" : " bars") +
+                " to your cart!";
+
+            checkbox.checked = false;
+            quantityInput.value = "1";
+        } else {
+            status.textContent =
+                "Unable to save your cart. Please check your browser settings.";
+        }
+
+    });
+
+});
+
+// SAMPLE PACK CHECKBOXES
+const sampleCheckboxes = Array.from(
+    document.querySelectorAll(".sample-checkbox")
+);
+
+const sampleCount = document.getElementById(
+    "sample-count"
+);
+
+const sampleProgress = document.getElementById(
+    "sample-progress"
+);
+
+const sampleInquiry = document.getElementById(
+    "sample-inquiry"
+);
+
+const sampleMessage = document.getElementById(
+    "sample-message"
+);
+
+// GET SELECTED SAMPLES
+function selectedSamples() {
+    return sampleCheckboxes
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+}
+
+// UPDATE SAMPLE SELECTION
+function updateSamples() {
+    const selected = selectedSamples();
+
+    // ALLOW UP TO FOUR DIFFERENT SCENTS
+    sampleCheckboxes.forEach(checkbox => {
+        checkbox.disabled =
+            !checkbox.checked && selected.length >= 4;
+    });
+
+    // UPDATE COUNTER
+    sampleCount.textContent =
+        selected.length + " of 4 samples selected";
+
+    // UPDATE PROGRESS BAR
+    sampleProgress.style.width =
+        (selected.length / 4 * 100) + "%";
+
+    // ENABLE INQUIRY BUTTON
+    sampleInquiry.disabled =
+        selected.length === 0;
+
+    // DISPLAY STATUS
+    sampleMessage.textContent =
+        selected.length === 4
+            ? "♡ You've selected four different samples!"
+            : "";
+}
+
+// LISTEN FOR CHECKBOX CHANGES
+sampleCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener(
+        "change",
+        updateSamples
+    );
+});
+
+// SEND SAMPLE PACK INQUIRY
+sampleInquiry.addEventListener("click", () => {
+
+    const selected = selectedSamples();
+
+    if (!selected.length) {
+        return;
+    }
+
+    const subject = "Sample Pack Inquiry";
+
+    const body =
+        "Hello Amanda Lee Soaps & Bubbles!\n\n" +
+        "I would like to inquire about a sample pack " +
+        "with these scents:\n\n" +
+        selected.map(
+            scent => "- " + scent
+        ).join("\n") +
+        "\n\nPlease let me know the pricing " +
+        "and availability.\n\nThank you!";
+
+    window.location.href =
+        "mailto:amandaleesoaps@gmail.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+});
+
+// KEEP CART COUNTER UPDATED
+window.addEventListener(
+    "storage",
+    updateCartCount
+);
+
+// INITIALIZE PAGE
+updateCartCount();
+updateSamples();
+
+</script>
 
 </body>
-
 </html>

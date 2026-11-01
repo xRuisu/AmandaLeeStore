@@ -1,0 +1,1120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Frequently asked questions about Amanda Lee Soaps & Bubbles, including handmade soap pricing, sample packages, customization, packaging, and shipping."
+    >
+
+    <title>FAQ | Amanda Lee Soaps &amp; Bubbles</title>
+
+    <style>
+        /* =====================================
+           ORIGINAL ABOUT US COLOR PALETTE
+        ===================================== */
+
+        :root {
+            --pink: #f5cfd8;
+            --light-pink: #f9dfe3;
+            --blush: #efbccb;
+            --lavender: #d8c7e6;
+            --light-lavender: #eadff1;
+            --cream: #f8e5d1;
+            --peach: #f4d3c7;
+            --mauve: #a65475;
+            --deep-mauve: #754458;
+            --gold: #d4a74e;
+            --text: #654f59;
+        }
+
+        /* =====================================
+           RESET
+        ===================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(245,188,207,0.65),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 85% 25%,
+                    rgba(211,191,231,0.65),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f7d6de,
+                    #f5e3df,
+                    #e7d9ef,
+                    #f5ddd1
+                );
+
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =====================================
+           TOP BAR
+        ===================================== */
+
+        .top-bar {
+            background:
+                linear-gradient(
+                    90deg,
+                    #efc5ce,
+                    #f4d5d5,
+                    #ead4e3
+                );
+
+            color: #815467;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.88rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* =====================================
+           NAVIGATION
+        ===================================== */
+
+        header {
+            background: rgba(248,224,225,0.95);
+            border-bottom:
+                1px solid rgba(157,79,112,0.16);
+            box-shadow:
+                0 7px 25px rgba(110,70,90,0.08);
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.45rem;
+            font-style: italic;
+            color: var(--mauve);
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #8b5067;
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding-bottom: 6px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--mauve);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        /* =====================================
+           FAQ HERO
+        ===================================== */
+
+        .faq-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 85px 20px 75px;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 75% 40%,
+                    rgba(211,190,231,0.75),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 20% 30%,
+                    rgba(244,188,203,0.60),
+                    transparent 32%
+                ),
+                linear-gradient(
+                    120deg,
+                    #f5d2db,
+                    #f6dfda,
+                    #dfd1eb
+                );
+        }
+
+        .hero-container {
+            max-width: 850px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            color: var(--mauve);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .faq-hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(3rem, 6vw, 5.2rem);
+            line-height: 1.05;
+            color: var(--deep-mauve);
+            font-weight: normal;
+        }
+
+        .faq-hero h1 em {
+            color: var(--mauve);
+        }
+
+        .faq-hero p {
+            margin: 25px auto 0;
+            max-width: 650px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* =====================================
+           REALISTIC FLOATING BUBBLES
+        ===================================== */
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 28% 23%,
+                    rgba(255,255,255,0.95) 0%,
+                    rgba(255,255,255,0.60) 8%,
+                    rgba(255,255,255,0.10) 25%,
+                    rgba(225,190,230,0.16) 55%,
+                    rgba(184,155,211,0.15) 75%,
+                    transparent 100%
+                );
+
+            border: 1px solid rgba(255,255,255,0.85);
+
+            box-shadow:
+                inset -5px -7px 12px rgba(190,145,211,0.14),
+                inset 4px 4px 10px rgba(255,255,255,0.7),
+                0 5px 14px rgba(109,76,96,0.12);
+
+            animation: bubbleFloat 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .bubble::before {
+            content: "";
+            position: absolute;
+            inset: 3px;
+            border-radius: 50%;
+
+            box-shadow:
+                inset 5px 0 8px rgba(249,165,199,0.22),
+                inset -5px 0 8px rgba(167,151,226,0.24),
+                inset 0 5px 8px rgba(255,220,164,0.18);
+        }
+
+        .bubble::after {
+            content: "";
+            position: absolute;
+            width: 25%;
+            height: 17%;
+            left: 20%;
+            top: 17%;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.85);
+            transform: rotate(-30deg);
+            filter: blur(1px);
+        }
+
+        .b1 {
+            width: 68px;
+            height: 68px;
+            right: 7%;
+            top: 14%;
+        }
+
+        .b2 {
+            width: 38px;
+            height: 38px;
+            right: 29%;
+            top: 5%;
+            animation-delay: 1s;
+        }
+
+        .b3 {
+            width: 52px;
+            height: 52px;
+            left: 7%;
+            bottom: 17%;
+            animation-delay: 2s;
+        }
+
+        .b4 {
+            width: 27px;
+            height: 27px;
+            left: 40%;
+            top: 10%;
+            animation-delay: 1.5s;
+        }
+
+        .b5 {
+            width: 78px;
+            height: 78px;
+            right: 3%;
+            bottom: 8%;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes bubbleFloat {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: translateY(-14px) translateX(4px);
+            }
+        }
+
+        /* =====================================
+           FAQ SECTIONS
+        ===================================== */
+
+        .faq-section {
+            padding: 85px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 15% 40%,
+                    rgba(239,188,205,0.45),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f6dcdf,
+                    #eadbed,
+                    #f5ddd2
+                );
+        }
+
+        .faq-section.alt {
+            background:
+                linear-gradient(
+                    135deg,
+                    #f4d4dc,
+                    #eaddea,
+                    #dfd2eb,
+                    #f4d9ce
+                );
+        }
+
+        .faq-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading span {
+            color: var(--mauve);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            margin-top: 10px;
+            font-family: Georgia, serif;
+            color: var(--deep-mauve);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: normal;
+        }
+
+        .section-heading h2 em {
+            color: var(--mauve);
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .faq-item {
+            border-radius: 22px;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f2cfd8,
+                    #e5d5ec,
+                    #f2d8ce
+                );
+
+            border:
+                1px solid rgba(158,80,113,0.16);
+
+            box-shadow:
+                0 13px 30px rgba(103,65,85,0.10);
+        }
+
+        .faq-item:nth-child(even) {
+            background:
+                linear-gradient(
+                    145deg,
+                    #dfd0eb,
+                    #efd2df
+                );
+        }
+
+        .faq-item summary {
+            list-style: none;
+            padding: 26px 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            cursor: pointer;
+            color: var(--deep-mauve);
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            font-family: Arial, sans-serif;
+            font-size: 1.6rem;
+            color: var(--mauve);
+            flex-shrink: 0;
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-item summary:focus-visible {
+            outline: 3px solid var(--mauve);
+            outline-offset: -4px;
+        }
+
+        .faq-answer {
+            padding: 0 30px 28px;
+            font-size: 1rem;
+            line-height: 1.85;
+        }
+
+        .faq-answer p + p {
+            margin-top: 12px;
+        }
+
+        .faq-answer a {
+            color: var(--deep-mauve);
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* =====================================
+           CONTACT BANNER
+        ===================================== */
+
+        .contact-banner {
+            text-align: center;
+            padding: 70px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 20% 50%,
+                    rgba(248,190,208,0.75),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 80% 40%,
+                    rgba(205,185,227,0.75),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    100deg,
+                    #edc5d2,
+                    #ddcde8,
+                    #efd0c7
+                );
+        }
+
+        .contact-banner h2 {
+            font-family: Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            color: var(--deep-mauve);
+            font-weight: normal;
+        }
+
+        .contact-banner h2 em {
+            color: var(--mauve);
+        }
+
+        .contact-banner p {
+            max-width: 650px;
+            margin: 18px auto 0;
+            line-height: 1.8;
+        }
+
+        .shop-button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 14px 27px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b96685,
+                    #98506f
+                );
+
+            color: #fff3f6;
+            border-radius: 5px;
+            border: none;
+            font-size: 0.88rem;
+            letter-spacing: 0.8px;
+
+            box-shadow:
+                0 9px 22px rgba(117,65,89,0.2);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .shop-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 14px 28px rgba(117,65,89,0.25);
+        }
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        footer {
+            background: #dbc8d2;
+            color: #664d59;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.88rem;
+        }
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media (max-width: 650px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .faq-item summary {
+                padding: 22px;
+                font-size: 1.1rem;
+            }
+
+            .faq-answer {
+                padding: 0 22px 24px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================
+         TOP BAR
+    ===================================== -->
+
+    <div class="top-bar">
+        ♡ Handmade with love in small batches
+        &nbsp;&nbsp; • &nbsp;&nbsp;
+        Made with care just for you 🫧
+    </div>
+
+    <!-- =====================================
+         NAVIGATION
+    ===================================== -->
+
+    <header>
+        <div class="nav-container">
+
+            <a href="index.html" class="brand">
+                Amanda Lee Soaps &amp; Bubbles
+            </a>
+
+            <nav aria-label="Main navigation">
+    <a href="index.html">HOME</a>
+    <a href="products.html">SHOP SOAPS</a>
+    <a href="about.html">ABOUT</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="cart.html">
+        CART <span id="cart-count"></span>
+    </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- =====================================
+             FAQ HERO
+        ===================================== -->
+
+        <section class="faq-hero">
+
+            <div class="hero-container">
+
+                <div class="eyebrow">
+                    ─── HERE TO HELP ♡ ───
+                </div>
+
+                <h1>
+                    Frequently Asked
+                    <br>
+                    <em>Questions.</em>
+                </h1>
+
+                <p>
+                    Have a question about our handmade soaps?
+                    We've gathered helpful answers about
+                    shopping, pricing, customization,
+                    sample packages, and shipping.
+                </p>
+
+            </div>
+
+            <div class="bubble b1" aria-hidden="true"></div>
+            <div class="bubble b2" aria-hidden="true"></div>
+            <div class="bubble b3" aria-hidden="true"></div>
+            <div class="bubble b4" aria-hidden="true"></div>
+            <div class="bubble b5" aria-hidden="true"></div>
+
+        </section>
+
+        <!-- =====================================
+             PRODUCTS AND PRICING
+        ===================================== -->
+
+        <section class="faq-section">
+
+            <div class="faq-container">
+
+                <div class="section-heading">
+                    <span>─── OUR HANDMADE SOAPS ───</span>
+
+                    <h2>
+                        Products &amp; <em>Pricing</em> ♡
+                    </h2>
+                </div>
+
+                <div class="faq-list">
+
+                    <details class="faq-item">
+                        <summary>How much do regular soaps cost?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Our regular handmade soaps are
+                                <strong>$7 per bar</strong>.
+                                You can also mix and match any
+                                <strong>four regular soap bars for $25</strong>.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How does the four-for-$25 offer work?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Add any four regular soap bars to your cart,
+                                and the bundle discount is automatically
+                                applied.
+                            </p>
+
+                            <p>
+                                Each complete group of four regular soaps
+                                saves you $3 compared with the regular
+                                $7-per-bar price. Kids' soaps do not
+                                count toward this offer.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How much do kids' soaps cost?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Kids' soaps are <strong>$10 per bar</strong>.
+                                Our listed scents are
+                                <strong>Baby Powder</strong> and
+                                <strong>Bubblegum</strong>.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Are your soaps handmade?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Yes! Amanda Lee Soaps &amp; Bubbles
+                                creates handmade soaps in small batches
+                                with attention to creativity, quality,
+                                and detail.
+                            </p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================
+             CUSTOMIZATION
+        ===================================== -->
+
+        <section class="faq-section alt">
+
+            <div class="faq-container">
+
+                <div class="section-heading">
+                    <span>─── MADE WITH A PERSONAL TOUCH ───</span>
+
+                    <h2>
+                        Custom <em>Requests</em> ♡
+                    </h2>
+                </div>
+
+                <div class="faq-list">
+
+                    <details class="faq-item">
+                        <summary>Can I request an ingredient substitution?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Yes. On our
+                                <a href="products.html">Shop Soaps page</a>,
+                                you can select the ingredient substitution
+                                option and describe what you'd like changed.
+                            </p>
+
+                            <p>
+                                All substitutions must be reviewed
+                                and approved before they can be fulfilled.
+                                Not every ingredient can necessarily
+                                be replaced.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Does an ingredient request guarantee the change?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                No. Substitution requests are not guaranteed.
+                                We must confirm whether the requested
+                                ingredients and formulation are suitable
+                                and available.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can you guarantee a soap is allergen-free?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                We cannot guarantee that a requested
+                                substitution makes a soap allergen-free.
+                                Please contact us about specific
+                                ingredient concerns before ordering.
+                            </p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================
+             SAMPLE PACKAGES
+        ===================================== -->
+
+        <section class="faq-section">
+
+            <div class="faq-container">
+
+                <div class="section-heading">
+                    <span>─── TRY SOMETHING NEW ───</span>
+
+                    <h2>
+                        Sample <em>Packages</em> ♡
+                    </h2>
+                </div>
+
+                <div class="faq-list">
+
+                    <details class="faq-item">
+                        <summary>Do you offer sample packages?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                You can submit a sample package request
+                                through our
+                                <a href="products.html#samples">
+                                    sample selection section
+                                </a>.
+                            </p>
+
+                            <p>
+                                Sample availability and pricing
+                                will be confirmed before ordering.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How many sample scents can I choose?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                You can choose
+                                <strong>up to four different scents</strong>
+                                in one sample package request.
+                            </p>
+
+                            <p>
+                                Each selected scent must be different.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Which sample scents are currently listed?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                The currently listed sample options are
+                                Cashmere Sweater, Baby Powder, and Bubblegum.
+                                Additional scents can be added as they
+                                become available.
+                            </p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================
+             PACKAGING AND SHIPPING
+        ===================================== -->
+
+        <section class="faq-section alt">
+
+            <div class="faq-container">
+
+                <div class="section-heading">
+                    <span>─── PACKAGED WITH CARE ───</span>
+
+                    <h2>
+                        Packaging &amp; <em>Shipping</em> ♡
+                    </h2>
+                </div>
+
+                <div class="faq-list">
+
+                    <details class="faq-item">
+                        <summary>How are the soap bars packaged?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Every soap bar is individually packaged
+                                in a <strong>sealed, clear plastic bag</strong>.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How will shipping costs be calculated?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Shipping costs depend on the total packed
+                                weight of the order, package dimensions,
+                                destination, and selected carrier service.
+                            </p>
+
+                            <p>
+                                Shipping calculations will include the
+                                appropriate packaging materials and box.
+                                Accurate carrier rates are not yet
+                                connected to the website.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I get a shipping price in my cart?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                The cart currently accepts a destination
+                                ZIP code but does not yet provide a
+                                live shipping quote.
+                            </p>
+
+                            <p>
+                                A shipping carrier integration is needed
+                                before the website can calculate and
+                                display accurate shipping charges.
+                            </p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================
+             ORDERS
+        ===================================== -->
+
+        <section class="faq-section">
+
+            <div class="faq-container">
+
+                <div class="section-heading">
+                    <span>─── SHOPPING MADE SIMPLE ───</span>
+
+                    <h2>
+                        Orders &amp; <em>Checkout</em> ♡
+                    </h2>
+                </div>
+
+                <div class="faq-list">
+
+                    <details class="faq-item">
+                        <summary>Can I place and pay for an order online?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                You can browse soaps and add items
+                                to your shopping cart.
+                            </p>
+
+                            <p>
+                                Online payment processing is not yet
+                                connected, so checkout is currently
+                                unavailable.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Will my cart save my selections?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Your cart is saved in your browser
+                                on the device you're using.
+                            </p>
+
+                            <p>
+                                Clearing browser storage or switching
+                                devices may remove your saved selections.
+                                Your cart does not submit an order
+                                to the business.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How can I ask a question before ordering?</summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                You can email us at
+                                <a href="mailto:amandaleesoaps@gmail.com">
+                                    amandaleesoaps@gmail.com
+                                </a>
+                                or call
+                                <a href="tel:+15742864414">
+                                    (574) 286-4414
+                                </a>.
+                            </p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================
+             CONTACT BANNER
+        ===================================== -->
+
+        <section class="contact-banner">
+
+            <h2>
+                Still Have <em>Questions?</em> ♡
+            </h2>
+
+            <p>
+                We'd love to hear from you!
+                Reach out about our handmade soaps,
+                ingredients, or special requests.
+            </p>
+
+            <a
+                href="mailto:amandaleesoaps@gmail.com"
+                class="shop-button"
+            >
+                EMAIL US ♡
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- =====================================
+         FOOTER
+    ===================================== -->
+
+    <footer>
+        © 2026 Amanda Lee Soaps &amp; Bubbles
+        &nbsp; | &nbsp;
+        Handmade With Love ♡
+    </footer>
+
+    <!-- =====================================
+         CART COUNT
+         Compatible with products.html/cart.html
+    ===================================== -->
+
+    <script>
+        function updateCartCount() {
+            const badge = document.getElementById("cart-count");
+
+            if (!badge) return;
+
+            let count = 0;
+
+            try {
+                const cart = JSON.parse(
+                    localStorage.getItem("amanda-lee-cart-v1") || "[]"
+                );
+
+                if (Array.isArray(cart)) {
+                    count = cart.reduce((sum, item) => {
+                        const quantity = Number(item.quantity);
+
+                        return sum + (
+                            Number.isInteger(quantity) && quantity > 0
+                                ? quantity
+                                : 0
+                        );
+                    }, 0);
+                }
+            } catch {
+                count = 0;
+            }
+
+            badge.textContent = count > 0 ? `(${count})` : "";
+        }
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            updateCartCount
+        );
+
+        window.addEventListener(
+            "storage",
+            updateCartCount
+        );
+    </script>
+
+</body>
+</html>
